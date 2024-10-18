@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Wanderlust Adventures</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              spin3d: {
+                '0%, 100%': { transform: 'rotateY(0deg)' },
+                '50%': { transform: 'rotateY(180deg)' },
+              },
+              flip: {
+                '0%': { transform: 'rotateY(0deg)' },
+                '50%': { transform: 'rotateY(180deg)' },
+                '100%': { transform: 'rotateY(360deg)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+            },
+            animation: {
+              spin3d: 'spin3d 5s infinite',
+              flip: 'flip 10s infinite',
+              float: 'float 3s ease-in-out infinite',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-green-900 text-white flex justify-center items-center min-h-screen p-5 bg-cover bg-center bg-fixed"
+    style="background-image: url('https://images.pexels.com/photos/1030928/pexels-photo-1030928.jpeg?auto=compress&cs=tinysrgb&w=600');">
+    <div class="container w-full max-w-screen-xl bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <!-- Sidebar -->
+      <div class="sidebar w-full md:w-64 bg-opacity-20 backdrop-blur-lg p-5 transition-all duration-300">
+        <ul class="space-y-3">
+          <li>
+            <a href="#" class="text-white block p-3 text-lg rounded-lg hover:bg-opacity-10 hover:translate-x-1 transition-all duration-300">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white block p-3 text-lg rounded-lg hover:bg-opacity-10 hover:translate-x-1 transition-all duration-300">
+              <i class="fas fa-plane"></i> Destinations
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white block p-3 text-lg rounded-lg hover:bg-opacity-10 hover:translate-x-1 transition-all duration-300">
+              <i class="fas fa-calendar-alt"></i> Packages
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white block p-3 text-lg rounded-lg hover:bg-opacity-10 hover:translate-x-1 transition-all duration-300">
+              <i class="fas fa-info-circle"></i> About Us
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white block p-3 text-lg rounded-lg hover:bg-opacity-10 hover:translate-x-1 transition-all duration-300">
+              <i class="fas fa-envelope"></i> Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main content -->
+      <main class="main-content flex-1 p-5 overflow-y-auto">
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center py-5">
+          <div class="logo text-2xl font-bold text-[#4cc9f0] animate-spin3d">Wanderlust Adventures</div>
+          <div class="search-container relative">
+            <input
+              type="text"
+              class="p-3 w-48 md:w-60 border-none rounded-full bg-opacity-10 backdrop-blur-md text-white focus:w-72 transition-all duration-300 focus:outline-none"
+              placeholder="Search destinations..."
+            />
+            <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-[#4cc9f0]"></i>
+          </div>
+        </nav>
+
+        <!-- Slideshow with Tailwind CSS animation -->
+        <div class="relative h-80 mb-5 rounded-lg overflow-hidden">
+          <div class="slideshow flex">
+            <img class="w-full h-full object-cover animate-flip" src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 1" />
+            <img class="w-full h-full object-cover animate-flip" src="https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 2" />
+            <img class="w-full h-full object-cover animate-flip" src="https://images.pexels.com/photos/2087391/pexels-photo-2087391.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 3" />
+          </div>
+        </div>
+
+        <!-- Agency Info with 3D effect -->
+        <div class="bg-[#4361ee] bg-opacity-30 backdrop-blur-md text-white text-center p-3 mb-5 rounded-lg animate-float">
+          <h2>Wanderlust Adventures</h2>
+          <p>Explore the world with us!</p>
+        </div>
+
+        <!-- Main Card with 3D Hover Effect -->
+        <div class="bg-opacity-10 backdrop-blur-md rounded-lg p-5 mb-5 hover:animate-spin3d">
+          <div>
+            <h2 class="text-2xl font-bold mb-3">Welcome to Wanderlust Adventures</h2>
+            <p class="mb-3">Embark on a journey of a lifetime with Wanderlust Adventures. We specialize in creating unforgettable travel experiences tailored to your desires.</p>
+            <p class="mb-3">Our expert team of travel enthusiasts is dedicated to curating the perfect itinerary for you. Whether you're seeking a relaxing beach getaway, an adventurous mountain expedition, or a cultural city tour, we have the perfect package for you.</p>
+            <p class="mb-3">With Wanderlust Adventures, you'll discover hidden gems, immerse yourself in local cultures, and create memories that will last a lifetime. Let us take care of the details while you focus on enjoying your dream vacation.</p>
+          </div>
+        </div>
+
+        <!-- Side Cards -->
+        <div class="flex flex-col space-y-5">
+          <div class="bg-opacity-10 backdrop-blur-md rounded-lg p-5 hover:animate-float">
+            <h3 class="text-xl font-bold mb-3">Special Offers</h3>
+            <p>Check out our latest deals and discounts on popular destinations!</p>
+          </div>
+          <div class="bg-opacity-10 backdrop-blur-md rounded-lg p-5 hover:animate-spin3d">
+            <h3 class="text-xl font-bold mb-3">Travel Tips</h3>
+            <p>Get expert advice on packing, local customs, and must-visit attractions.</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center py-5 cursor-pointer">
+          <p>Click here to contact us</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
